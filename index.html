@@ -27,8 +27,8 @@
 	</style>
 </head>
 <body>
-	<div class="Header">
-		<h3>수업 시간표</h3>
+	<div class="Header" onmouseover="onMouseHover(e)">
+		<h3 >수업 시간표</h3>
 	</div>
 	<table class="studytime">
 		<thead >
@@ -154,7 +154,7 @@
 	
 	
 	function onMouseHover(event:any) {
-		
+		document.getElementsByClassName("studytime")[0].style.display = "none"
 	
 	}	
 </script>
