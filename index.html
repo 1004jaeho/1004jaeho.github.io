@@ -27,7 +27,7 @@
 	</style>
 </head>
 <body>
-	<div class="Header" onmouseover="onMouseHover(e)">
+	<div class="Header" onclick="onClickEvent(event)">
 		<h3 >수업 시간표</h3>
 	</div>
 	<table class="studytime">
@@ -153,8 +153,9 @@
 <script>
 	
 	
-	function onMouseHover(event:any) {
-		document.getElementsByClassName("studytime")[0].style.display = "none"
+	function onClickEvent(event:any) {
+		console.log("event:",event)
+		document.getElementsByClassName("studytime")[0].style.display = document.getElementsByClassName("studytime")[0].style.display==="none" ? "flex":"none"
 	
 	}	
 </script>
