@@ -11,7 +11,11 @@
 	<script>
 		var i =10;
 		for (; i<=35; i+=5) {
-			document.write(`<span style=font-size: ${size}px>`);
+// 			document.write(`<span style=font-size: ${size}px>`);
+// 			document.write(`${i} : px`);
+// 			document.write(`</span>`);
+			
+			document.write("<span style='font-size": + i + "px'>");
 			document.write(`${i} : px`);
 			document.write(`</span>`);
 		}
