@@ -6,24 +6,19 @@
 	<title></title>
 </head>
 <body>
-  <h2>도형 서식 폼 만들기</h2>
+  <h2>for 문으로 10px~35px 크기 출력</h2>
   <hr>
-  <form>
-    <fieldset>
-      <legend>도형 서식 입력</legend>
-	    선종류 <select name="etc">
-	    	<option value="1">선없음
-		<option value="2">실선
-		<option value="3">점선
-	    </select> <br/>
-      선두께 <input type="number" max="100" min="1" value="1"/> &nbsp; 선색 <input type="color"/><br/>
-      투명도(0~100) : <input  type="range" min="0" max="100" list="opacity"/>
-	    <datalist id="opacity">
-		<option value="10">10
-		<option value="50">50
-		<option value="100">100
-	    </datalist>
-    </fieldset>
-  </form>
+	<script>
+		var i =10;
+		for (; i<=35; i+=5) {
+		document.write(`<span style=font-size: ${size}px>`);
+		document.write(`${i} : px`);
+			document.write(`</span>`);
+			
+		
+		}
+	
+	
+	</script>
 </body>
 </html>
