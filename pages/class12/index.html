@@ -7,14 +7,58 @@
     <title>Document</title>
 </head>
 <script>
-    function student(params) {
-        
+    function Student(name, age, tel) {
+        this.name = name
+        this.age = age
+        this.tel = tel
+
+        this.putName = (name) => this.name = name // 이름 변경
+        this.putAge = (age) => this.age = age // 나이 변경
+        this.putTel = (tel) => this.tel = tel // 전화번호 변경
+        this.getName = () => this.name
+        this.getAge = () => this.age
+        this.getTel = () => this.tel
+    }
+
+
+    function updateName(e) {
+        document.getElementById("name").innerHTML = e.target.value
+    }
+    function updateAge(e) {
+        document.getElementById("age").innerHTML = e.target.value
+    }
+    function updateTel(e) {
+        document.getElementById("tel").innerHTML = e.target.value
     }
 </script>
 <body>
     <h3>프로토타입으로 객체 만들기</h3>
+    <hr>
+    
 </body>
 <script>
-    start()
+    var user = new Student("윤재호", 27, "010-xxxx-xxxx")
+    document.write(`유저 : ${user.getName()} | ${user.getAge()} | ${user.getTel()}`)
+
+    document.write("<p></p>")
+    document.write(`<label> 이름 <input id='ipt_name' type='text' placeholder='입력해주세요' /></label>`)
+    document.write("<p></p>")
+    document.write("<label> 나이 <input id='ipt_age' type='text' placeholder='입력해주세요' /></label>")
+    document.write("<p></p>")
+    document.write("<label> 폰번호 <input id='ipt_tel' type='text' placeholder='입력해주세요' /></label>")
+    document.write("<p></p>")
+    // document.getElementById("btn_name").onchange = onChangeName
+    // document.getElementById("btn_name").onclick = onClickPutName(user)
+    
+    document.getElementById("ipt_name").addEventListener('input', updateName);
+    document.getElementById("ipt_age").addEventListener('input', updateAge);
+    document.getElementById("ipt_tel").addEventListener('input', updateTel);
+
+
+    
+
+    document.write(`<div >입력한 유저 이름 : <span id="name">${document.getElementById("ipt_name").value}</span></div>`)
+    document.write(`<div>입력한 유저 나이: <span id="age">${document.getElementById("ipt_age").value}</span></div>`)
+    document.write(`<div >입력한 유저 번호: <span id="tel">${document.getElementById("ipt_tel").value}</span></div>`)
 </script>
 </html>
